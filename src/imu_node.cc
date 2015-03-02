@@ -225,11 +225,11 @@ public:
         return -1;
       }
 
-      diagnostic_.setHardwareID(getID(true));
-
       ROS_INFO("Initializing IMU time with offset %f.", offset_);
 
       imu.initTime(offset_);
+
+      diagnostic_.setHardwareID(getID(true));
 
       if (autocalibrate_ || calibrate_requested_)
       {
